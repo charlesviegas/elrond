@@ -1,0 +1,19 @@
+{
+  "name": "elrond",
+  "description": "Arquitetura base",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "angular": "1.4.x",
+    "angular-loader": "1.4.x",
+    "angular-mocks": "~1.4.x",
+    "angular-cookies": "~1.4.x",
+    "angular-i18n": "~1.4.x",
+    "angular-ui-router": "~0.2.15",
+    "requirejs-text": "2.0.x",
+    "requirejs": "2.1.x",
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.6",
+    "underscore": "~1.8.3"
+  }
+}

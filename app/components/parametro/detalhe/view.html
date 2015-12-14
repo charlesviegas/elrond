@@ -1,0 +1,27 @@
+<button type="submit" class="btn btn-primary" ng-if="!editing" ng-click="new($event)">
+    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+</button>
+
+<div class="panel panel-default" ng-if="editing">
+    <div class="panel-heading">
+        <span class="glyphicon glyphicon-cog"> </span> Detalhes
+    </div>
+    <div class="panel-body">
+        <form>
+            <div class="form-group">
+                <label for="parametro">Parâmetro</label>
+                <input type="text" class="form-control" id="parametro" ng-model="parametro.nome" placeholder="Nome do parâmetro">
+            </div>
+            <div class="form-group">
+                <label for="valor">Valor</label>
+                <input type="text" class="form-control" id="valor" ng-model="parametro.valor" placeholder="Valor">
+            </div>
+            <div class="form-group">
+                <label for="descricao">Descrição completa</label>
+                <textarea id="descricao" class="form-control" rows="3" ng-model="parametro.descricao"></textarea>
+            </div>
+            <a class="btn btn-success" href="#" ng-click="save($event)" role="button">Salvar</a>
+            <a class="btn btn-default" href="#" ng-click="cancel($event)" role="button">Cancelar</a>
+        </form>
+    </div>
+</div>
