@@ -1,8 +1,19 @@
 {
   "name": "elrond",
   "description": "Arquitetura base",
-  "version": "1.0.0",
   "private": true,
+  "moduleType": "amd",
+  "authors": [
+    "Charles Viegas <charles.viegas@codate.com.br> (http://codate.com.br)"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/charlesviegas/elrond.git"
+  },
+  "main": [
+    "./app/main.js",
+    "./app/main.css"
+  ],
   "dependencies": {
     "angular": "1.4.x",
     "angular-loader": "1.4.x",

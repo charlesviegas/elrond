@@ -1,6 +1,6 @@
 'use strict';
 
-define(['components/layout/main', 'angular', 'angularMocks'], function (main) {
+define(['components/layout/main', 'angularMocks'], function (main) {
 
     describe('Suite de teste para o componente Layout', function () {
 

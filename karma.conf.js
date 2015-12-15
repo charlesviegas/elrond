@@ -7,22 +7,25 @@ module.exports = function (config) {
         basePath: './',
 
         files: [
-            {pattern: 'app/vendor/angular/angular.js', included: false},
-            {pattern: 'app/vendor/angular-ui-router/release/angular-ui-router.js', included: false},
-            {pattern: 'app/vendor/angular-i18n/angular-locale_pt-br.js', included: false},
-            {pattern: 'app/vendor/angular-cookies/angular-cookies.js', included: false},
-            {pattern: 'app/vendor/angular-mocks/angular-mocks.js', included: false},
-            {pattern: 'app/vendor/requirejs-text/text.js', included: false},
-            {pattern: 'app/vendor/jquery/dist/jquery.js', included: false},
-            {pattern: 'app/vendor/underscore/underscore.js', included: false},
-            {pattern: 'app/vendor/bootstrap/dist/js/bootstrap.js', included: false},
-            {pattern: 'app/components/**/*', included: false},
-            {pattern: 'app/extensions/**/*', included: false},
-            {pattern: 'app/core/**/*', included: false},
+            //{pattern: 'app/vendor/angular/angular.js', included: false},
+            //{pattern: 'app/vendor/angular-ui-router/release/angular-ui-router.js', included: false},
+            //{pattern: 'app/vendor/angular-i18n/angular-locale_pt-br.js', included: false},
+            //{pattern: 'app/vendor/angular-cookies/angular-cookies.js', included: false},
+            //{pattern: 'app/vendor/angular-mocks/angular-mocks.js', included: false},
+            //{pattern: 'app/vendor/requirejs-text/text.js', included: false},
+            //{pattern: 'app/vendor/jquery/dist/jquery.js', included: false},
+            //{pattern: 'app/vendor/underscore/underscore.js', included: false},
+            //{pattern: 'app/vendor/bootstrap/dist/js/bootstrap.js', included: false},
+            //{pattern: 'app/components/**/*', included: false},
+            //{pattern: 'app/extensions/**/*', included: false},
+            //{pattern: 'app/core/**/*', included: false},
+            {pattern: 'app/**/*', included: false},
             'app/main.js'
         ],
 
-        autoWatch: true,
+        autoWatch: false,
+
+        singleRun: true,
 
         colors: true,
 
@@ -38,11 +41,17 @@ module.exports = function (config) {
             'app/extensions/**/*.js': ['coverage']
         },
 
-        reporters: ['coverage', 'progress'],
+        reporters: ['junit', 'coverage', 'progress'],
+
+        junitReporter: {
+            outputDir: 'dist/reports/junit',
+            outputFile: undefined,
+            useBrowserName: true
+        },
 
         coverageReporter: {
             type : 'lcov',
-            dir : '.tmp/reports/coverage/',
+            dir : 'dist/reports/coverage/',
             subdir: '.'
         }
 
