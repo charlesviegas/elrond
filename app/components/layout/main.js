@@ -1,6 +1,6 @@
 'use strict';
 
-define(['sandbox', 'components/layout/controller', 'text!components/layout/view.html'], function (sandbox, controller, view) {
+define(['core/sandbox', 'components/layout/controller', 'text!components/layout/view.html'], function (sandbox, controller, view) {
 
     var thisComponent = {
         module: 'elLayout',

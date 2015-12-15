@@ -2,7 +2,7 @@
 
 define(
     [
-        'sandbox',
+        'core/sandbox',
         'components/parametro/event',
         'components/parametro/service',
         'components/parametro/controller',

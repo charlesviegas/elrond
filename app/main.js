@@ -1,74 +1,63 @@
 'use strict';
 
-if (window.__karma__) {
-    var allTestFiles = [];
-    var TEST_REGEXP = /spec\.js$/;
+var el = {};
 
-    var pathToModule = function (path) {
-        return path.replace(/^\/base\/app\//, '').replace(/\.js$/, '');
+el.loadConfig = function() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (xhttp.readyState == 4 && xhttp.status == 200) {
+            var config = JSON.parse(xhttp.responseText);
+            el.loadUnitTest();
+            el.loadRequirejs(config);
+        }
     };
+    xhttp.open('GET', 'config.json', true);
+    xhttp.send();
+};
 
-    Object.keys(window.__karma__.files).forEach(function (file) {
-        if (TEST_REGEXP.test(file)) {
-            // Normalize paths to RequireJS module names.
-            allTestFiles.push(pathToModule(file));
-        }
-    });
-}
+el.loadUnitTest = function() {
+    if (window.__karma__) {
+        var allTestFiles = [];
+        var TEST_REGEXP = /spec\.js$/;
 
-require.config({
-    waitSeconds: 20,
-    paths: {
-        jquery: 'vendor/jquery/dist/jquery',
-        angular: 'vendor/angular/angular',
-        angularLocale: 'vendor/angular-i18n/angular-locale_pt-br',
-        angularCookie: 'vendor/angular-cookies/angular-cookies',
-        angularMocks: 'vendor/angular-mocks/angular-mocks',
-        angularRouter: 'vendor/angular-ui-router/release/angular-ui-router',
-        bootstrap: 'vendor/bootstrap/dist/js/bootstrap',
-        text: 'vendor/requirejs-text/text',
-        underscore: 'vendor/underscore/underscore',
-        sandbox: 'core/sandbox',
-        app: 'core/app'
-    },
-    shim: {
-        angular: {'exports': 'angular'},
-        angularLocale: ['angular'],
-        angularCookie: ['angular'],
-        angularRouter: ['angular'],
-        angularMocks: {
-            deps: ['angular'],
-            exports: 'angular.mock'
-        },
-        underscore: {
-            exports: '_'
-        },
-        bootstrap: {
-            deps: ['angular', 'jquery']
-        }
-    },
-    priority: [
-        'angular'
-    ],
-    deps: window.__karma__ ? allTestFiles : [],
-    callback: window.__karma__ ? window.__karma__.start : null,
-    baseUrl: window.__karma__ ? '/base/app' : ''
-});
+        var pathToModule = function (path) {
+            return path.replace(/^\/base\/app\//, '').replace(/\.js$/, '');
+        };
 
-require(['app'], function (app) {
-    app.start({
-        name: 'elApp',
-        extensions: [
-            'extensions/directives',
-            'extensions/mock-parametro'
+        Object.keys(window.__karma__.files).forEach(function (file) {
+            if (TEST_REGEXP.test(file)) {
+                // Normalize paths to RequireJS module names.
+                allTestFiles.push(pathToModule(file));
+            }
+        });
+    }
+};
+
+el.loadRequirejs = function(config) {
+
+    var mydeps = config.extensions.concat(config.components);
+
+    require.config({
+        name: "main",
+        waitSeconds: 20,
+        paths: config.paths,
+        shim: config.shim,
+        priority: [
+            'jquery',
+            'angular'
         ],
-        components: [
-            'components/layout/main',
-            'components/home/main',
-            'components/parametro/main',
-            'components/parametro/detalhe/main',
-            'components/parametro/filtro/main',
-            'components/parametro/lista/main'
-        ]
+        deps: window.__karma__ ? mydeps.concat(allTestFiles) : mydeps,
+        callback: window.__karma__ ? window.__karma__.start : null,
+        baseUrl: window.__karma__ ? '/base/app' : ''
     });
-});
+
+    require(['core/app'], function (app) {
+        app.start({
+            name: 'elApp',
+            extensions: config.extensions,
+            components: config.components
+        });
+    });
+};
+
+el.loadConfig();

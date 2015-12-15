@@ -1,0 +1,55 @@
+{
+  "paths": {
+    "jquery": "vendor/jquery/dist/jquery",
+    "angular": "vendor/angular/angular",
+    "angularLocale": "vendor/angular-i18n/angular-locale_pt-br",
+    "angularCookie": "vendor/angular-cookies/angular-cookies",
+    "angularMocks": "vendor/angular-mocks/angular-mocks",
+    "angularRouter": "vendor/angular-ui-router/release/angular-ui-router",
+    "bootstrap": "vendor/bootstrap/dist/js/bootstrap",
+    "text": "vendor/requirejs-text/text",
+    "underscore": "vendor/underscore/underscore"
+  },
+  "shim": {
+    "angular": {
+      "exports": "angular"
+    },
+    "angularLocale": [
+      "angular"
+    ],
+    "angularCookie": [
+      "angular"
+    ],
+    "angularRouter": [
+      "angular"
+    ],
+    "angularMocks": {
+      "deps": [
+        "angular"
+      ],
+      "exports": "angular.mock"
+    },
+    "underscore": {
+      "exports": "_"
+    },
+    "bootstrap": {
+      "deps": [
+        "angular",
+        "jquery"
+      ]
+    }
+  },
+
+  "extensions": [
+    "extensions/directives",
+    "extensions/mock-parametro"
+  ],
+  "components": [
+    "components/layout/main",
+    "components/home/main",
+    "components/parametro/main",
+    "components/parametro/detalhe/main",
+    "components/parametro/filtro/main",
+    "components/parametro/lista/main"
+  ]
+}

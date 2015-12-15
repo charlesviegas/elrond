@@ -1,6 +1,6 @@
 'use strict';
 
-define(['sandbox'], function (sandbox) {
+define(['core/sandbox'], function (sandbox) {
 
     var route = ['$urlRouterProvider', function ($urlRouterProvider) {
         $urlRouterProvider.otherwise('/home');

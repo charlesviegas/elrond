@@ -1,14 +1,21 @@
 module.exports = {
 
-    getConfig: function (env) {
+    getConfig: function (env, grunt) {
+
+        var config = grunt.file.readJSON('./app/config.json');
+
         return {
             requirejs: {
                 minifyJs: {
                     options: {
+                        name: 'main',
                         baseUrl: env.src,
-                        //mainConfigFile: env.src + '/main.js',
+                        paths: config.paths,
+                        shim: config.shim,
                         out: env.dist + '/public/main.js',
-                        deps: env.deps,
+                        deps: config.extensions.concat(config.components)
+
+                        /*
                         generateSourceMaps: true,
                         preserveLicenseComments: false,
                         optimize: 'uglify2',
@@ -17,6 +24,7 @@ module.exports = {
                                 except: ['$super']
                             }
                         }
+                        */
                     }
                 },
                 minifyCss: {

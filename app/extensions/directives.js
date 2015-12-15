@@ -1,6 +1,11 @@
+/**
+ * @license Todos os direitos reservados a Codate.
+ * Widgets comuns
+ */
+
 'use strict';
 
-define(['sandbox'], function (sandbox) {
+define(['core/sandbox'], function (sandbox) {
 
     var thisComponent = {
         module: 'elDirective',

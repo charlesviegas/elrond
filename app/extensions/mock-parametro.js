@@ -1,6 +1,11 @@
+/**
+ * @license Todos os direitos reservados a Codate.
+ * Mock dos servicos restful para o model Parametro
+ */
+
 'use strict';
 
-define(['sandbox'], function (sandbox) {
+define(['core/sandbox'], function (sandbox) {
 
     var thisComponent = {
         module: 'elMockParametro',

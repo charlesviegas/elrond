@@ -1,6 +1,11 @@
+/**
+ * @license Todos os direitos reservados a Codate.
+ * Página Home
+ */
+
 'use strict';
 
-define(['sandbox', 'text!components/home/view.html'], function (sandbox, view) {
+define(['core/sandbox', 'text!components/home/view.html'], function (sandbox, view) {
 
     var thisComponent = {
         module: 'elHome',

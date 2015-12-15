@@ -1,6 +1,6 @@
 'use strict';
 
-define(['sandbox', 'text!components/parametro/filtro/view.html'], function (sandbox, view) {
+define(['core/sandbox', 'text!components/parametro/filtro/view.html'], function (sandbox, view) {
 
     var thisComponent = {
         module: 'elParametroFiltro',

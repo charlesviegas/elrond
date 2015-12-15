@@ -3,17 +3,7 @@
 var ENV = {
     src: 'app',
     dist: 'dist',
-    browsers: ['Chrome'],
-    deps: [
-        'extensions/directives',
-        'extensions/mock-parametro',
-        'components/layout/main',
-        'components/home/main',
-        'components/parametro/main',
-        'components/parametro/detalhe/main',
-        'components/parametro/filtro/main',
-        'components/parametro/lista/main'
-    ]
+    browsers: ['Chrome']
 };
 
 function loadTasks() {
@@ -33,7 +23,7 @@ function initConfig(grunt, tasks) {
     var _ = require('underscore'), configs = {};
 
     tasks.forEach(function (task) {
-        configs = _.extend(configs, task.getConfig(ENV));
+        configs = _.extend(configs, task.getConfig(ENV, grunt));
     });
 
     grunt.initConfig(configs);
@@ -48,7 +38,7 @@ function loadNpmTasks(grunt, tasks) {
 function registerTasks(grunt) {
     grunt.registerTask('docs', ['clean', 'jsdoc', 'eslint']);
     grunt.registerTask('test', ['karma']);
-    grunt.registerTask('dist', ['docs', 'test', 'requirejs:minifyCss', 'requirejs:minifyJs', 'copy', 'compress']);
+    grunt.registerTask('dist', ['docs', 'requirejs:minifyCss', 'requirejs:minifyJs', 'copy', 'compress']);
     grunt.registerTask('default', ['dist']);
 }
 

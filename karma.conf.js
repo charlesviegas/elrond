@@ -20,6 +20,7 @@ module.exports = function (config) {
             //{pattern: 'app/extensions/**/*', included: false},
             //{pattern: 'app/core/**/*', included: false},
             {pattern: 'app/**/*', included: false},
+            {pattern: 'app/config.json', included: false},
             'app/main.js'
         ],
 

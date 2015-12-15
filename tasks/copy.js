@@ -7,6 +7,8 @@ module.exports = {
                     expand: true,
                     cwd: env.src,
                     src: [
+                        'index.html',
+                        'config.json',
                         'vendor/bootstrap/dist/fonts/**',
                         'vendor/requirejs/require.js'
                     ],
