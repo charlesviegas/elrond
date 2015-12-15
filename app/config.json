@@ -39,9 +39,8 @@
       ]
     }
   },
-
   "extensions": [
-    "extensions/directives",
+    "extensions/widgets",
     "extensions/mock-parametro"
   ],
   "components": [

@@ -19,8 +19,11 @@ module.exports = function (config) {
             //{pattern: 'app/components/**/*', included: false},
             //{pattern: 'app/extensions/**/*', included: false},
             //{pattern: 'app/core/**/*', included: false},
-            {pattern: 'app/**/*', included: false},
-            {pattern: 'app/config.json', included: false},
+            {pattern: 'app/config.json', watched: true, served: true, included: false},
+            {pattern: 'app/core/**/*', included: false},
+            {pattern: 'app/extensions/**/*', included: false},
+            {pattern: 'app/components/**/*', included: false},
+            {pattern: 'app/vendor/**/*', included: false},
             'app/main.js'
         ],
 

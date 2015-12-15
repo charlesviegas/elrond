@@ -8,7 +8,7 @@
 define(['core/sandbox'], function (sandbox) {
 
     var thisComponent = {
-        module: 'elDirective',
+        module: 'elWidgets',
         directiveDefault: 'elBtnDefault',
         directivePrimary: 'elBtnPrimary'
     };

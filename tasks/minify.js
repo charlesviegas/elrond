@@ -13,9 +13,7 @@ module.exports = {
                         paths: config.paths,
                         shim: config.shim,
                         out: env.dist + '/public/main.js',
-                        deps: config.extensions.concat(config.components)
-
-                        /*
+                        deps: config.extensions.concat(config.components),
                         generateSourceMaps: true,
                         preserveLicenseComments: false,
                         optimize: 'uglify2',
@@ -24,7 +22,6 @@ module.exports = {
                                 except: ['$super']
                             }
                         }
-                        */
                     }
                 },
                 minifyCss: {

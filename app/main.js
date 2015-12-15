@@ -2,22 +2,26 @@
 
 var el = {};
 
-el.loadConfig = function() {
+el.loadConfig = function () {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (xhttp.readyState == 4 && xhttp.status == 200) {
             var config = JSON.parse(xhttp.responseText);
-            el.loadUnitTest();
-            el.loadRequirejs(config);
+            var allTestFiles = el.loadUnitTest();
+            el.loadRequirejs(allTestFiles, config);
         }
     };
-    xhttp.open('GET', 'config.json', true);
+    var url = 'config.json';
+    if (window.__karma__) {
+        url = '/base/app/' + url;
+    }
+    xhttp.open('GET', url, true);
     xhttp.send();
 };
 
-el.loadUnitTest = function() {
+el.loadUnitTest = function () {
+    var allTestFiles = [];
     if (window.__karma__) {
-        var allTestFiles = [];
         var TEST_REGEXP = /spec\.js$/;
 
         var pathToModule = function (path) {
@@ -31,9 +35,10 @@ el.loadUnitTest = function() {
             }
         });
     }
+    return allTestFiles;
 };
 
-el.loadRequirejs = function(config) {
+el.loadRequirejs = function (allTestFiles, config) {
 
     var mydeps = config.extensions.concat(config.components);
 
