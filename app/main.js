@@ -56,13 +56,15 @@ elrond.loadRequirejs = function (allTestFiles, config) {
         baseUrl: window.__karma__ ? '/base/app' : ''
     });
 
-    require(['legolas'], function (legolas) {
-        legolas.start({
-            name: 'elApp',
-            extensions: config.extensions,
-            components: config.components
+    if (!window.__karma__) {
+        require(['legolas'], function (legolas) {
+            legolas.start({
+                name: 'elApp',
+                extensions: config.extensions,
+                components: config.components
+            });
         });
-    });
+    }
 };
 
 elrond.loadConfig();

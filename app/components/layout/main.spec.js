@@ -4,14 +4,18 @@ define(['legolas', 'angularMocks'], function (legolas) {
 
     describe('Suite de teste para o componente Layout', function () {
 
-        beforeEach(function () {
+        beforeAll(function (done) {
             legolas.start({
-                name: 'elrond',
+                name: 'layoutApp',
                 extensions: [],
-                components: [
-                    'components/layout/main'
-                ]
+                components: ['components/layout/main'],
+                callback: function () {
+                    done();
+                }
             });
+        });
+
+        beforeEach(function () {
             module('elLayout');
         });
 
@@ -28,7 +32,6 @@ define(['legolas', 'angularMocks'], function (legolas) {
                 };
                 testedController = _$controller_('elLayoutController', {$scope: $rootScope, $state: $state});
             }));
-
 
             it('deve estar definido', function () {
                 expect(testedController).toBeDefined();
@@ -69,4 +72,5 @@ define(['legolas', 'angularMocks'], function (legolas) {
 
         });
     });
+
 });
