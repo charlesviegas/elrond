@@ -56,8 +56,8 @@ elrond.loadRequirejs = function (allTestFiles, config) {
         baseUrl: window.__karma__ ? '/base/app' : ''
     });
 
-    require(['legolas'], function (app) {
-        app.start({
+    require(['legolas'], function (legolas) {
+        legolas.start({
             name: 'elApp',
             extensions: config.extensions,
             components: config.components

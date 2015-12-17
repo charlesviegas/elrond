@@ -38,7 +38,7 @@ function loadNpmTasks(grunt, tasks) {
 function registerTasks(grunt) {
     grunt.registerTask('docs', ['clean', 'jsdoc', 'eslint']);
     grunt.registerTask('test', ['karma']);
-    grunt.registerTask('dist', ['docs', 'requirejs:minifyCss', 'requirejs:minifyJs', 'copy', 'compress']);
+    grunt.registerTask('dist', ['docs', 'test', 'requirejs:minifyCss', 'requirejs:minifyJs', 'copy', 'compress']);
     grunt.registerTask('default', ['dist']);
 }
 

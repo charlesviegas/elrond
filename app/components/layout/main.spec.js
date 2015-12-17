@@ -1,11 +1,17 @@
 'use strict';
 
-define(['components/layout/main', 'angularMocks'], function (main) {
+define(['legolas', 'angularMocks'], function (legolas) {
 
     describe('Suite de teste para o componente Layout', function () {
 
         beforeEach(function () {
-            main.initialize();
+            legolas.start({
+                name: 'elrond',
+                extensions: [],
+                components: [
+                    'components/layout/main'
+                ]
+            });
             module('elLayout');
         });
 

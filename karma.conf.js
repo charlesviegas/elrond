@@ -8,7 +8,7 @@ module.exports = function (config) {
 
         files: [
             {pattern: 'app/config.json', watched: true, served: true, included: false},
-            {pattern: 'app/core/**/*', included: false},
+            {pattern: 'app/sandbox.js', included: false},
             {pattern: 'app/extensions/**/*', included: false},
             {pattern: 'app/components/**/*', included: false},
             {pattern: 'app/base/**/*', included: false},
