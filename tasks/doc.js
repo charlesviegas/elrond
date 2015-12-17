@@ -4,7 +4,7 @@ module.exports = {
         return {
             jsdoc: {
                 doc: {
-                    src: [env.src + '/**/*.js', '!' + env.src +'/vendor/**'],
+                    src: [env.src + '/**/*.js', '!' + env.src +'/base/**'],
                     dest: env.dist + '/doc',
                     options: {
                         private: false

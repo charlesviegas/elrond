@@ -1,8 +1,13 @@
+/**
+ * @license Todos os direitos reservados a Codate.
+ * Component Parametro
+ */
+
 'use strict';
 
 define(
     [
-        'core/sandbox',
+        'sandbox',
         'components/parametro/event',
         'components/parametro/service',
         'components/parametro/controller',
@@ -11,31 +16,37 @@ define(
     function (sandbox, event, service, controller, view) {
 
         var thisComponent = {
-            module: 'elParametro',
-            controller: 'elParametroController',
-            service: 'elParametroService',
-            constant: 'elParametroEvent',
-            route: ['$stateProvider', function ($stateProvider) {
-                $stateProvider.state('layout.parametro', {
-                    url: '^/parametro',
-                    template: view,
-                    controller: thisComponent.controller
-                });
-            }]
+
+            name: 'elParametro',
+
+            controllers: {
+                main: ['elParametroController', controller]
+            },
+
+            services: {
+                main: ['elParametroService', service]
+            },
+
+            constants: {
+                events: ['elParametroEvent', event]
+            },
+
+            configs: {
+                router: ['$stateProvider', function ($stateProvider) {
+                    $stateProvider.state('layout.parametro', {
+                        url: '^/parametro',
+                        template: view,
+                        controller: thisComponent.controllers.main[0]
+                    });
+                }]
+            }
         };
-
-
-        function initialize() {
-            sandbox.registerComponents(thisComponent.module)
-                .controller(thisComponent.controller, controller)
-                .service(thisComponent.service, service)
-                .constant(thisComponent.constant, event)
-                .config(thisComponent.route);
-        }
 
         return {
 
-            initialize: initialize
+            initialize: function () {
+                return thisComponent;
+            }
 
         };
 

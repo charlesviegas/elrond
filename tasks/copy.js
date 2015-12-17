@@ -9,8 +9,8 @@ module.exports = {
                     src: [
                         'index.html',
                         'config.json',
-                        'vendor/bootstrap/dist/fonts/**',
-                        'vendor/requirejs/require.js'
+                        'base/bootstrap/dist/fonts/**',
+                        'base/requirejs/require.js'
                     ],
                     dest: env.dist + '/public'
                 }

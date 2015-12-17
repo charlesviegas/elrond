@@ -1,16 +1,21 @@
+/**
+ * @license Todos os direitos reservados a Codate.
+ * Subcomponente Lista do componente Parametro
+ */
+
 'use strict';
 
-define(['core/sandbox', 'text!components/parametro/lista/view.html'], function (sandbox, view) {
+define(['sandbox', 'text!components/parametro/lista/view.html'], function (sandbox, view) {
 
     var thisComponent = {
-        module: 'elParametroLista',
-        directive: 'elParametroLista'
-    };
 
-    function initialize() {
-        sandbox.registerExtensions(thisComponent.module)
-            .directive(thisComponent.directive, customDirective)
-    }
+        name: 'elParametroLista',
+
+        directives: {
+            lista: ['elParametroLista', customDirective]
+        }
+
+    };
 
     function customDirective() {
         return {
@@ -31,7 +36,9 @@ define(['core/sandbox', 'text!components/parametro/lista/view.html'], function (
 
     return {
 
-        initialize: initialize
+        initialize: function () {
+            return thisComponent;
+        }
 
     };
 

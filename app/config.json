@@ -1,14 +1,16 @@
 {
   "paths": {
-    "jquery": "vendor/jquery/dist/jquery",
-    "angular": "vendor/angular/angular",
-    "angularLocale": "vendor/angular-i18n/angular-locale_pt-br",
-    "angularCookie": "vendor/angular-cookies/angular-cookies",
-    "angularMocks": "vendor/angular-mocks/angular-mocks",
-    "angularRouter": "vendor/angular-ui-router/release/angular-ui-router",
-    "bootstrap": "vendor/bootstrap/dist/js/bootstrap",
-    "text": "vendor/requirejs-text/text",
-    "underscore": "vendor/underscore/underscore"
+    "jquery": "base/jquery/dist/jquery",
+    "angular": "base/angular/angular",
+    "angularLocale": "base/angular-i18n/angular-locale_pt-br",
+    "angularCookie": "base/angular-cookies/angular-cookies",
+    "angularMocks": "base/angular-mocks/angular-mocks",
+    "angularRouter": "base/angular-ui-router/release/angular-ui-router",
+    "angularAnimate": "base/angular-animate/angular-animate",
+    "bootstrap": "base/bootstrap/dist/js/bootstrap",
+    "text": "base/requirejs-text/text",
+    "underscore": "base/underscore/underscore",
+    "legolas": "base/legolas/legolas"
   },
   "shim": {
     "angular": {
@@ -21,6 +23,9 @@
       "angular"
     ],
     "angularRouter": [
+      "angular"
+    ],
+    "angularAnimate": [
       "angular"
     ],
     "angularMocks": {
@@ -40,8 +45,7 @@
     }
   },
   "extensions": [
-    "extensions/widgets",
-    "extensions/mock-parametro"
+    "extensions/mock/main"
   ],
   "components": [
     "components/layout/main",

@@ -1,14 +1,14 @@
 'use strict';
 
-var el = {};
+var elrond = {};
 
-el.loadConfig = function () {
+elrond.loadConfig = function () {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (xhttp.readyState == 4 && xhttp.status == 200) {
             var config = JSON.parse(xhttp.responseText);
-            var allTestFiles = el.loadUnitTest();
-            el.loadRequirejs(allTestFiles, config);
+            var allTestFiles = elrond.loadUnitTest();
+            elrond.loadRequirejs(allTestFiles, config);
         }
     };
     var url = 'config.json';
@@ -19,7 +19,7 @@ el.loadConfig = function () {
     xhttp.send();
 };
 
-el.loadUnitTest = function () {
+elrond.loadUnitTest = function () {
     var allTestFiles = [];
     if (window.__karma__) {
         var TEST_REGEXP = /spec\.js$/;
@@ -38,7 +38,7 @@ el.loadUnitTest = function () {
     return allTestFiles;
 };
 
-el.loadRequirejs = function (allTestFiles, config) {
+elrond.loadRequirejs = function (allTestFiles, config) {
 
     var mydeps = config.extensions.concat(config.components);
 
@@ -56,7 +56,7 @@ el.loadRequirejs = function (allTestFiles, config) {
         baseUrl: window.__karma__ ? '/base/app' : ''
     });
 
-    require(['core/app'], function (app) {
+    require(['legolas'], function (app) {
         app.start({
             name: 'elApp',
             extensions: config.extensions,
@@ -65,4 +65,4 @@ el.loadRequirejs = function (allTestFiles, config) {
     });
 };
 
-el.loadConfig();
+elrond.loadConfig();

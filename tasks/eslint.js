@@ -6,7 +6,7 @@ module.exports = {
                 options: {
                     outputFile: env.dist + '/reports/eslint'
                 },
-                src: [env.src + '/**/*.js', '!' + env.src +'/vendor/**']
+                src: [env.src + '/**/*.js', '!' + env.src +'/base/**']
             }
         };
     },

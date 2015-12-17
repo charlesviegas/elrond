@@ -11,6 +11,7 @@
     "url": "https://github.com/charlesviegas/elrond.git"
   },
   "main": [
+    "./app/index.html",
     "./app/main.js",
     "./app/main.css"
   ],
@@ -20,11 +21,13 @@
     "angular-mocks": "~1.4.x",
     "angular-cookies": "~1.4.x",
     "angular-i18n": "~1.4.x",
+    "angular-animate": "1.4.x",
     "angular-ui-router": "~0.2.15",
     "requirejs-text": "2.0.x",
     "requirejs": "2.1.x",
     "jquery": "~2.1.4",
     "bootstrap": "~3.3.6",
-    "underscore": "~1.8.3"
+    "underscore": "~1.8.3",
+    "legolas": "https://github.com/charlesviegas/legolas.git#v1.0"
   }
 }

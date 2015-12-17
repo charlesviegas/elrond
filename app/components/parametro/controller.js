@@ -1,3 +1,8 @@
+/**
+ * @license Todos os direitos reservados a Codate.
+ * Controlador usado no componente Parametro
+ */
+
 'use strict';
 
 define([], function () {

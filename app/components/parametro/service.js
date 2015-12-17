@@ -1,3 +1,8 @@
+/**
+ * @license Todos os direitos reservados a Codate.
+ * Service usuario no componente Parametro
+ */
+
 'use strict';
 
 define([], function () {

@@ -5,26 +5,28 @@
 
 'use strict';
 
-define(['core/sandbox', 'text!components/home/view.html'], function (sandbox, view) {
+define(['text!components/home/view.html'], function (view) {
 
     var thisComponent = {
-        module: 'elHome',
-        route: ['$stateProvider', function ($stateProvider) {
-            $stateProvider.state('layout.home', {
-                url: '^/home',
-                template: view
-            });
-        }]
-    };
 
-    function initialize() {
-        sandbox.registerComponents(thisComponent.module)
-            .config(thisComponent.route)
-    }
+        name: 'elHome',
+
+        configs: {
+            router: ['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+                $urlRouterProvider.otherwise('/home');
+                $stateProvider.state('layout.home', {
+                    url: '^/home',
+                    template: view
+                });
+            }]
+        }
+    };
 
     return {
 
-        initialize: initialize
+        initialize: function () {
+            return thisComponent;
+        }
 
     };
 

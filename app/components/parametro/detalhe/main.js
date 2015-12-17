@@ -1,16 +1,20 @@
+/**
+ * @license Todos os direitos reservados a Codate.
+ * Subcomponente Detalhe do componente Parametro
+ */
+
 'use strict';
 
-define(['core/sandbox', 'text!components/parametro/detalhe/view.html'], function (sandbox, view) {
+define(['sandbox', 'text!components/parametro/detalhe/view.html'], function (sandbox, view) {
 
     var thisComponent = {
-        module: 'elParametroDetalhe',
-        directive: 'elParametroDetalhe'
-    };
 
-    function initialize() {
-        sandbox.registerExtensions(thisComponent.module)
-            .directive(thisComponent.directive, customDirective)
-    }
+        name: 'elParametroDetalhe',
+
+        directives: {
+            detalhe: ['elParametroDetalhe', customDirective]
+        }
+    };
 
     function customDirective() {
         return {
@@ -46,12 +50,12 @@ define(['core/sandbox', 'text!components/parametro/detalhe/view.html'], function
                     $scope.parametro = {};
                 };
 
-                $scope.$on(elParametroEvent.SELECT_EVENT, function(event, dados){
+                $scope.$on(elParametroEvent.SELECT_EVENT, function (event, dados) {
                     $scope.parametro = dados;
                     $scope.editing = true;
                 });
 
-                $scope.$on(elParametroEvent.SEARCH_EVENT, function(){
+                $scope.$on(elParametroEvent.SEARCH_EVENT, function () {
                     $scope.parametro = {};
                     $scope.editing = false;
                 });
@@ -65,7 +69,9 @@ define(['core/sandbox', 'text!components/parametro/detalhe/view.html'], function
 
     return {
 
-        initialize: initialize
+        initialize: function () {
+            return thisComponent;
+        }
 
     };
 

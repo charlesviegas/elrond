@@ -1,29 +1,41 @@
+/**
+ * @license Todos os direitos reservados a Codate.
+ * Layout principal usado por todas as páginas
+ */
+
 'use strict';
 
-define(['core/sandbox', 'components/layout/controller', 'text!components/layout/view.html'], function (sandbox, controller, view) {
+define(['text!components/layout/view.html'], function (view) {
 
     var thisComponent = {
-        module: 'elLayout',
-        controller: 'elLayoutController',
-        route: ['$stateProvider', function ($stateProvider) {
-            $stateProvider.state('layout', {
-                url: '^/',
-                abstract: true,
-                template: view,
-                controller: thisComponent.controller
-            });
-        }]
-    };
 
-    function initialize() {
-        sandbox.registerComponents(thisComponent.module)
-            .controller(thisComponent.controller, controller)
-            .config(thisComponent.route)
-    }
+        name: 'elLayout',
+
+        controllers: {
+            main: ['elLayoutController', ['$scope', '$state', function ($scope, $state) {
+                $scope.isActive = function (state) {
+                    return (state === $state.current.name) ? 'active' : '';
+                }
+            }]]
+        },
+
+        configs: {
+            router: ['$stateProvider', function ($stateProvider) {
+                $stateProvider.state('layout', {
+                    url: '^/',
+                    abstract: true,
+                    template: view,
+                    controller: thisComponent.controllers.main[0]
+                });
+            }]
+        }
+    };
 
     return {
 
-        initialize: initialize
+        initialize: function () {
+            return thisComponent;
+        }
 
     };
 

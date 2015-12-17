@@ -1,3 +1,8 @@
+/**
+ * @license Todos os direitos reservados a Codate.
+ * Eventos usados no componente Parametro
+ */
+
 'use strict';
 
 define([], function () {
