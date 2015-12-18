@@ -6,7 +6,8 @@
  * @requires $http
  *
  * @description
- *  Serviço responsável pela recuperação e manutenção dos parâmetros da aplicação entre servidor e cliente.
+ *  Serviço responsável pela recuperação e manutenção
+ *  dos parâmetros da aplicação entre servidor e cliente.
  */
 define([], function () {
 
@@ -19,7 +20,7 @@ define([], function () {
 
         /**
          * @ngdoc method
-         * @name inserir
+         * @name elParametro.elParametroService#inserir
          * @methodOf elParametro.elParametroService
          *
          * @description
@@ -35,7 +36,6 @@ define([], function () {
                 data: JSON.stringify(parametro)
             });
         };
-
 
         /**
          * @ngdoc method

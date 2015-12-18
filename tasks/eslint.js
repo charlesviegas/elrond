@@ -3,10 +3,13 @@ module.exports = {
     getConfig: function (env) {
         return {
             eslint: {
-                options: {
-                    outputFile: env.dist + '/reports/eslint'
-                },
-                src: [env.src + '/**/*.js', '!' + env.src +'/base/**']
+                client: {
+                    src: [env.src + '/**/*.js', '!' + env.src + '/base/**'],
+                    options: {
+                        outputFile: env.dist + '/eslint',
+                        configFile: ".eslintrc.json"
+                    }
+                }
             }
         };
     },

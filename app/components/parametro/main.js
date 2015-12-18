@@ -5,7 +5,8 @@
  * @name elParametro
  *
  * @description
- *  Módulo principal do componente Home que é responsável por exibir e gerenciar a tela parâmetros da aplicação.
+ *  Módulo principal do componente Home que é responsável
+ *  por exibir e gerenciar a tela parâmetros da aplicação.
  */
 define(
     [
