@@ -4,17 +4,6 @@ define(['legolas', 'angularMocks'], function (legolas) {
 
     describe('Suite de teste para o componente Layout', function () {
 
-        beforeAll(function (done) {
-            legolas.start({
-                name: 'layoutApp',
-                extensions: [],
-                components: ['components/layout/main'],
-                callback: function () {
-                    done();
-                }
-            });
-        });
-
         beforeEach(function () {
             module('elLayout');
         });

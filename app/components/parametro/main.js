@@ -1,10 +1,12 @@
 /**
  * @license Todos os direitos reservados a Codate.
- * Component Parametro
+ * @author Charles Viegas <charles.viegas@codate.com.br>
+ * @ngdoc overview
+ * @name elParametro
+ *
+ * @description
+ *  Módulo principal do componente Home que é responsável por exibir e gerenciar a tela parâmetros da aplicação.
  */
-
-'use strict';
-
 define(
     [
         'sandbox',
@@ -14,6 +16,8 @@ define(
         'text!components/parametro/view.html'
     ],
     function (sandbox, event, service, controller, view) {
+
+        'use strict';
 
         var thisComponent = {
 
@@ -44,6 +48,16 @@ define(
 
         return {
 
+            /**
+             * @ngdoc function
+             * @name elParametro#initialize
+             * @methodOf elParametro
+             *
+             * @description
+             *  Inicializa o modulos retornando um objeto com o registro de todos os serviços do angular.
+             *
+             *  @return {Object} Objeto de configuração do módulo.
+             */
             initialize: function () {
                 return thisComponent;
             }

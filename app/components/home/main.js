@@ -1,11 +1,15 @@
 /**
  * @license Todos os direitos reservados a Codate.
- * Página Home
+ * @author Charles Viegas <charles.viegas@codate.com.br>
+ * @ngdoc overview
+ * @name elHome
+ *
+ * @description
+ *  Módulo principal do componente Home que é responsável por exibir e gerenciar a tela inicial da aplicação.
  */
-
-'use strict';
-
 define(['text!components/home/view.html'], function (view) {
+
+    'use strict';
 
     var thisComponent = {
 

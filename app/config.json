@@ -45,10 +45,10 @@
     }
   },
   "extensions": [
-    "extensions/mock/main"
+    "extensions/mock/main",
+    "extensions/layout/main"
   ],
   "components": [
-    "components/layout/main",
     "components/home/main",
     "components/parametro/main",
     "components/parametro/detalhe/main",

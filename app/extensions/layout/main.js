@@ -5,7 +5,7 @@
 
 'use strict';
 
-define(['text!components/layout/view.html'], function (view) {
+define(['text!extensions/layout/view.html'], function (view) {
 
     var thisComponent = {
 
