@@ -1,4 +1,5 @@
 {
+  "name": "elrond",
   "paths": {
     "jquery": "base/jquery/dist/jquery",
     "angular": "base/angular/angular",
@@ -44,6 +45,14 @@
       ]
     }
   },
+  "priority": [
+    "jquery",
+    "angular"
+  ],
+  "baseModules": [
+    "ui.router",
+    "ngCookies"
+  ],
   "extensions": [
     "extensions/mock/main",
     "extensions/layout/main"

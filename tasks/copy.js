@@ -10,6 +10,7 @@ module.exports = {
                         'index.html',
                         'config.json',
                         'base/bootstrap/dist/fonts/**',
+                        'base/legolas/legolas.js',
                         'base/requirejs/require.js'
                     ],
                     dest: env.dist + '/public'

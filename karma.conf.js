@@ -12,6 +12,7 @@ module.exports = function (config) {
             {pattern: 'app/extensions/**/*', included: false},
             {pattern: 'app/components/**/*', included: false},
             {pattern: 'app/base/**/*', included: false},
+            'app/base/legolas/legolas.js',
             'app/main.js'
         ],
 
