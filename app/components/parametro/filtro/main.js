@@ -22,12 +22,13 @@ define(['sandbox', 'text!components/parametro/filtro/view.html'], function (sand
             restrict: 'E',
             template: view,
             controller: ['$scope', 'elParametroEvent', function ($scope, elParametroEvent) {
+
                 $scope.searchText = '';
                 $scope.search = function () {
                     $scope.$parent.$broadcast(elParametroEvent.SEARCH_EVENT, {nome: $scope.searchText});
-                }
+                };
             }]
-        }
+        };
     }
 
     return {

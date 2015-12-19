@@ -18,7 +18,7 @@ define(
         'angularMocks'
 
     ],
-    function (_, jquery, bootstrap, angular) {
+    function (_) {
 
         return {
 

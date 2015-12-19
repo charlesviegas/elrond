@@ -46,7 +46,7 @@ define([], function () {
          *  Escuta o evento disparado quando há uma tentativa inserção ou alteração de parâmetro no repositório da aplicação.
          */
         $scope.$on(elParametroEvent.SAVE_EVENT, function (event, model) {
-            elParametroService.inserir(model).then(function (response) {
+            elParametroService.inserir(model).then(function () {
                 initialize();
             });
         });

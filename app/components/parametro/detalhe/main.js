@@ -59,12 +59,8 @@ define(['sandbox', 'text!components/parametro/detalhe/view.html'], function (san
                     $scope.parametro = {};
                     $scope.editing = false;
                 });
-            }],
-
-            link: function (scope, iElement, iAttrs) {
-            }
-
-        }
+            }]
+        };
     }
 
     return {

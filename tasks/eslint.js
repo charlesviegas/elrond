@@ -6,7 +6,7 @@ module.exports = {
                 client: {
                     src: [env.src + '/**/*.js', '!' + env.src + '/base/**'],
                     options: {
-                        outputFile: env.dist + '/eslint',
+                        //outputFile: env.dist + '/eslint',
                         configFile: ".eslintrc.json"
                     }
                 }

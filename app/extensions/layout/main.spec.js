@@ -1,6 +1,6 @@
 'use strict';
 
-define(['legolas', 'angularMocks'], function (legolas) {
+define(['angularMocks'], function () {
 
     describe('Suite de teste para o componente Layout', function () {
 

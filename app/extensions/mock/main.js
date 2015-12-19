@@ -37,7 +37,7 @@ define(['sandbox'], function (sandbox) {
 
     function inserir($httpBackend) {
         $httpBackend.whenPOST(thisComponent.url).respond(function (method, url, data) {
-            var inserted = angular.fromJson(data);
+            var inserted = JSON.parse(data);
             inserted.id = thisComponent.nextval++;
             thisComponent.repository.push(inserted);
             return [200, inserted, {}];
@@ -46,7 +46,7 @@ define(['sandbox'], function (sandbox) {
 
     function alterar($httpBackend) {
         $httpBackend.whenPUT(thisComponent.url).respond(function (method, url, data) {
-            var updated = angular.fromJson(data);
+            var updated = JSON.parse(data);
             var actual = sandbox.utils.findWhere(thisComponent.repository, {id: updated.id});
             if (actual) {
                 actual.nome = updated.nome || actual.nome;
@@ -59,7 +59,7 @@ define(['sandbox'], function (sandbox) {
 
     function filtrar($httpBackend) {
         $httpBackend.whenPOST(thisComponent.url + '/filtro').respond(function (method, url, data) {
-            var filter = angular.fromJson(data);
+            var filter = JSON.parse(data);
             var result = sandbox.utils.where(thisComponent.repository, {nome: filter.nome});
             return [200, result, {}];
         });

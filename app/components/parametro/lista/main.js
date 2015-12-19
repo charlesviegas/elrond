@@ -29,9 +29,9 @@ define(['sandbox', 'text!components/parametro/lista/view.html'], function (sandb
                     $event.preventDefault();
                     $event.stopPropagation();
                     $scope.$parent.$broadcast(elParametroEvent.SELECT_EVENT, parametro);
-                }
+                };
             }]
-        }
+        };
     }
 
     return {

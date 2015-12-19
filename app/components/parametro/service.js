@@ -91,7 +91,7 @@ define([], function () {
                 url: url + '/filtro',
                 data: JSON.stringify(filtro)
             });
-        }
+        };
 
     }];
 

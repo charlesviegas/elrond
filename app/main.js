@@ -46,7 +46,7 @@
         libs = window.__karma__ ? libs.concat(allTestFiles) : libs;
 
         require.config({
-            name: "main",
+            name: 'main',
             waitSeconds: 20,
             paths: config.paths,
             shim: config.shim,

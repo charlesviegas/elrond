@@ -15,7 +15,7 @@ define(['text!extensions/layout/view.html'], function (view) {
             main: ['elLayoutController', ['$scope', '$state', function ($scope, $state) {
                 $scope.isActive = function (state) {
                     return (state === $state.current.name) ? 'active' : '';
-                }
+                };
             }]]
         },
 
