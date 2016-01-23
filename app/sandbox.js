@@ -15,7 +15,8 @@ define(
         'angularLocale',
         'angularCookie',
         'angularAnimate',
-        'angularMocks'
+        'angularMocks',
+        'angularBootstrap'
 
     ],
     function (_) {
