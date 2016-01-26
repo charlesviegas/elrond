@@ -15,12 +15,43 @@ define(['text!components/home/view.html'], function (view) {
 
         name: 'elHome',
 
+        controllers: {
+            main: ['elHomeController', ['$scope', function($scope){
+                $scope.singleModel = 1;
+                $scope.isCollapsed = false;
+
+                $scope.items = [
+                    'The first choice!',
+                    'And another choice for you.',
+                    'but wait! A third!'
+                ];
+
+                $scope.status = {
+                    isopen: false
+                };
+
+                $scope.toggled = function(open) {
+                    $log.log('Dropdown is now: ', open);
+                };
+
+                $scope.toggleDropdown = function($event) {
+                    $event.preventDefault();
+                    $event.stopPropagation();
+                    $scope.status.isopen = !$scope.status.isopen;
+                };
+
+                $scope.appendToEl = angular.element(document.querySelector('#dropdown-long-content'));
+
+            }]]
+        },
+
         configs: {
             router: ['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
                 $urlRouterProvider.otherwise('/home');
                 $stateProvider.state('layout.home', {
                     url: '^/home',
-                    template: view
+                    template: view,
+                    controller: thisComponent.controllers.main[0]
                 });
             }]
         }
