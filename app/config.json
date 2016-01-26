@@ -4,7 +4,7 @@
     "jquery": "base/jquery/dist/jquery",
     "angular": "base/angular/angular",
     "angularLocale": "base/angular-i18n/angular-locale_pt-br",
-    "angularBootstrap": "base/angular-bootstrap/ui-bootstrap",
+    "angularBootstrap": "base/angular-bootstrap/ui-bootstrap-tpls",
     "angularCookie": "base/angular-cookies/angular-cookies",
     "angularMocks": "base/angular-mocks/angular-mocks",
     "angularRouter": "base/angular-ui-router/release/angular-ui-router",
