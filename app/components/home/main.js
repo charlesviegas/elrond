@@ -7,7 +7,7 @@
  * @description
  *  Módulo principal do componente Home que é responsável por exibir e gerenciar a tela inicial da aplicação.
  */
-define(['text!components/home/view.html'], function (view) {
+define(['sandbox','text!components/home/view.html'], function (sandbox, view) {
 
     'use strict';
 
@@ -17,6 +17,16 @@ define(['text!components/home/view.html'], function (view) {
 
         controllers: {
             main: ['elHomeController', ['$scope', function($scope){
+
+
+                $scope.successClick = function(){
+                    sandbox.success('Corpo da mensagem', 'Título da mensagem');
+                };
+
+                $scope.errorClick = function(){
+                    sandbox.error('Corpo da mensagem', 'Título da mensagem');
+                };
+
                 $scope.singleModel = 1;
                 $scope.isCollapsed = false;
 

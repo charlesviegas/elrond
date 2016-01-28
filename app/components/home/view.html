@@ -27,15 +27,18 @@
 </style>
 
 <div class="jumbotron">
-    <h1>Bem-vindo</h1>
-    <p>Neste curso iremos conhecer como criar uma aplicação extensível e escalável utilizando o Angularjs.</p>
-    <p><a class="btn btn-primary btn-lg" href="#" role="button">Leia mais</a></p>
+    <h1>Teste do Toast</h1>
+    <p>Click nos botoes para exibir as mensagens apropriadas.</p>
+    <button class="btn btn-success btn-lg"  ng-click="successClick()">Sucesso</button>
+    <button class="btn btn-danger btn-lg"  ng-click="errorClick()">Error</button>
+
+
+    <h1>Teste dos Bootstrap UI</h1>
 
     <pre>{{singleModel}}</pre>
     <button type="button" class="btn btn-primary" ng-model="singleModel" uib-btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0">
         Single Toggle
     </button>
-
 
     <button type="button" class="btn btn-default" ng-click="isCollapsed = !isCollapsed">Toggle collapse</button>
     <hr>

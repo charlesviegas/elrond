@@ -9,6 +9,7 @@ define(
     [
         'underscore',
         'jquery',
+        'toastr',
         'bootstrap',
         'angular',
         'angularRouter',
@@ -19,11 +20,19 @@ define(
         'angularBootstrap'
 
     ],
-    function (_) {
+    function (_, jquery, toastr) {
 
         return {
 
-            utils: _
+            utils: _,
+
+            success: function (corpo, titulo) {
+                toastr.success(corpo, titulo);
+            },
+
+            error: function (corpo, titulo) {
+                toastr.error(corpo, titulo);
+            }
 
         };
 

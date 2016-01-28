@@ -12,7 +12,8 @@
     "bootstrap": "base/bootstrap/dist/js/bootstrap",
     "text": "base/requirejs-text/text",
     "underscore": "base/underscore/underscore",
-    "legolas": "base/legolas/legolas"
+    "legolas": "base/legolas/legolas",
+    "toastr": "base/toastr/toastr"
   },
   "shim": {
     "angular": {
@@ -47,7 +48,10 @@
         "angular",
         "jquery"
       ]
-    }
+    },
+    "toastr": [
+      "jquery"
+    ]
   },
   "priority": [
     "jquery",
