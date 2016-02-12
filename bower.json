@@ -30,6 +30,7 @@
     "underscore": "~1.8.3",
     "legolas": "https://github.com/charlesviegas/legolas.git#v1.0.x",
     "angular-bootstrap": "~1.1.0",
-    "toastr": "~2.1.2"
+    "toastr": "~2.1.2",
+    "peregrin": "https://github.com/charlesviegas/peregrin.git#^0.0.1"
   }
 }

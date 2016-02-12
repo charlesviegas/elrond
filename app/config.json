@@ -13,6 +13,7 @@
     "text": "base/requirejs-text/text",
     "underscore": "base/underscore/underscore",
     "legolas": "base/legolas/legolas",
+    "peregrin": "base/peregrin/dist/peregrin",
     "toastr": "base/toastr/toastr"
   },
   "shim": {
@@ -51,6 +52,9 @@
     },
     "toastr": [
       "jquery"
+    ],
+    "peregrin": [
+      "angular"
     ]
   },
   "priority": [
@@ -60,7 +64,8 @@
   "baseModules": [
     "ui.router",
     "ngCookies",
-    "ui.bootstrap"
+    "ui.bootstrap",
+    "peregrin"
   ],
   "extensions": [
     "extensions/mock/main",

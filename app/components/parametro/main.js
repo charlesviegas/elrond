@@ -41,7 +41,8 @@ define(
                     $stateProvider.state('layout.parametro', {
                         url: '^/parametro',
                         template: view,
-                        controller: thisComponent.controllers.main[0]
+                        controller: thisComponent.controllers.main[0],
+                        peAuthorities: 'ADMINISTRADOR'
                     });
                 }]
             }

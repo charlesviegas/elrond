@@ -17,8 +17,8 @@ define(
         'angularCookie',
         'angularAnimate',
         'angularMocks',
-        'angularBootstrap'
-
+        'angularBootstrap',
+        'peregrin'
     ],
     function (_, jquery, toastr) {
 
